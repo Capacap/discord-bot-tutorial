@@ -1,4 +1,6 @@
-# Import from built-in os package
+# Pip packages python-dotenv and discord.py must be installed for this script to work
+
+# Import from os package
 from os import getenv
 # Import from python-dotenv package
 from dotenv import load_dotenv
