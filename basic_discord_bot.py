@@ -26,6 +26,9 @@ class DiscordBotContainer:
         # command_prefix is the symbol that proceeds commands triggerd by functions with the @bot.command decorator
         bot = Bot(command_prefix="!", intents=intents, case_insensitive=True)
 
+        # Below are functions that will be attached to the bot decoratd with @bot.event and @bot.command
+        # all bot functions must be async functions
+
         # This function will trigger when the bot first becomes ready to send and recieve messages
         # The @bot.event decorator marks bot functions that are not commands
         @bot.event
