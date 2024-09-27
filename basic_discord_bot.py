@@ -51,18 +51,20 @@ class DiscordBotContainer:
             bot.process_commands(message)
 
         #The @bot.command decorator marks this function as a command
-        # Users can trigger it by writing the command prefix followed by the name of the function, eg. "!greet"
+        # Users can trigger it by writing the command prefix followed by the name of the function
+        # This function will be triggered by typing "!greet"
         @bot.command
         async def greet(message: Message):
             # Send a message on the same channel the command was posted on
             await message.channel.send(f"Greetings {message.author.display_name}!")
 
         # Here is a simple command that uses data stored in the DiscordBotContainer object
+        # This function will be triggered by typing "!pymentions"
         @bot.command
-        async def greet(message: Message):
+        async def pymentions(message: Message):
             await message.channel.send(f"Python has been mentioned {self.python_mention_count} times.")
 
-        # This is a command that can only be triggered by the bot's owner
+        # This function will only be triggered if the bot's owner types "!shutdown"
         @bot.command
         async def shutdown(message: Message):
             owner = bot.is_owner(message.author)
